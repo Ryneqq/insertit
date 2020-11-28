@@ -7,11 +7,9 @@ window.onload = function() {
 
     connection.on("ReceiveMessage", function (user, message) {
         console.log("recieved message");
-        var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        var encodedMsg = user + " says " + msg;
-        var li = document.createElement("li");
-        li.textContent = encodedMsg;
-        document.getElementById("messagesList").appendChild(li);
+        var ele = document.createElement("div");
+        ele.innerHTML = message;
+        document.getElementById("xD").appendChild(ele);
     });
 
     connection.start().then(function () {
