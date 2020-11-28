@@ -1,6 +1,6 @@
 window.onload = function() {
-    var url = "192.168.0.133/simpleHub"
-    var connection = new signalR.HubConnectionBuilder().withUrl("http://192.168.0.133/simpleHub").build();
+    var url = "http://192.168.0.133:5000/simpleHub";
+    var connection = new signalR.HubConnectionBuilder().withUrl(url).build();
 
     //Disable send button until connection is established
     document.getElementById("sendButton").disabled = true;
